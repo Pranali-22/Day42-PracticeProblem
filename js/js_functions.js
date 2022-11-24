@@ -39,3 +39,14 @@ phoneNo.addEventListener('input', function(){
     else
         phoneError.textContent = "Invalid Phone number";
 });
+
+//UC4 - Validate password
+const password = document.querySelector('#pwd');
+const pwdError = document.querySelector('.pwd-error');
+password.addEventListener('input', function(){
+    let pwdRegex = RegExp('^[a-zA-Z0-9!@#$&*]{8,}$');
+    if(pwdRegex.test(password.value))
+        pwdError.textContent = "";
+    else
+        pwdError.textContent = "Invalid password";
+});
