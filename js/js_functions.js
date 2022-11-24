@@ -1,4 +1,4 @@
-//UC1
+//UC1 - validate name
 const text = document.querySelector('#text');
 const textError = document.querySelector('.text-error');
 text.addEventListener('input',function(){
@@ -17,7 +17,7 @@ salary.addEventListener('input', function(){
 });
 
 
-//UC2
+//UC2 - validate email
 const emailId = document.querySelector('#email');
 const emailError = document.querySelector('.email-error');
 emailId.addEventListener('input',function(){
@@ -26,4 +26,16 @@ emailId.addEventListener('input',function(){
         emailError.textContent = "";
     else
         emailError.textContent = "Invalid Email address";
+});
+
+
+//UC3 - validate phone number
+const phoneNo = document.querySelector('#tel');
+const phoneError = document.querySelector('.tel-error');
+phoneNo.addEventListener('input', function(){
+    let phoneRegex = RegExp('^[0-9]{2} [0-9]{10}$');
+    if(phoneRegex.test(phoneNo.value))
+        phoneError.textContent = "";
+    else
+        phoneError.textContent = "Invalid Phone number";
 });
