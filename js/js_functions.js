@@ -41,10 +41,11 @@ phoneNo.addEventListener('input', function(){
 });
 
 //UC4 - Validate password
+//UC5 - change regex
 const password = document.querySelector('#pwd');
 const pwdError = document.querySelector('.pwd-error');
 password.addEventListener('input', function(){
-    let pwdRegex = RegExp('^[a-zA-Z0-9!@#$&*]{8,}$');
+    let pwdRegex = RegExp('^[A-Z]{1,}[a-zA-Z0-9]{5,}[!@#$&*]{1,}[0-9]{1,}$');
     if(pwdRegex.test(password.value))
         pwdError.textContent = "";
     else
